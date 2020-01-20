@@ -12,6 +12,7 @@ A weak-to-strong map table. It is inspired by [`NSMapTable`](https://developer.a
 ```swift
 public func value(forKey key: Key) -> Value?
 public func value(forKey key: Key, default: @autoclosure () -> Value) -> Value
+public func forceCastedValue<T>(forKey key: Key, default: @autoclosure () -> T) -> T
 public func setValue(_ value: Value?, forKey key: Key)
 ```
 

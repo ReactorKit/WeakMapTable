@@ -46,6 +46,10 @@ final public class WeakMapTable<Key, Value> where Key: AnyObject {
     return defaultValue
   }
 
+  public func forceCastedValue<T>(forKey key: Key, default: @autoclosure () -> T) -> T {
+    return self.value(forKey: key, default: `default`() as! Value) as! T
+  }
+
   public func setValue(_ value: Value?, forKey key: Key) {
     let weakKey = Weak(key)
 
