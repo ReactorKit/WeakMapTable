@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "WeakMapTable"
-  s.version          = "1.1.0"
+  s.version          = "1.2.0"
   s.summary          = "A weak-to-strong map table"
   s.homepage         = "https://github.com/ReactorKit/WeakMapTable"
   s.license          = { :type => "MIT", :file => "LICENSE" }
