@@ -13,5 +13,6 @@ let package = Package(
   targets: [
     .target(name: "WeakMapTable", dependencies: []),
     .testTarget(name: "WeakMapTableTests", dependencies: ["WeakMapTable"]),
-  ]
+  ],
+  swiftLanguageVersions: [.v5]
 )
