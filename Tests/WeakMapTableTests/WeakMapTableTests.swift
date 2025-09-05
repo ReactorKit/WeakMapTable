@@ -81,6 +81,23 @@ final class WeakMapTableTests: XCTestCase {
     XCTAssertNil(weakKey)
     XCTAssertNil(weakValue)
   }
+
+  func testRemoveAll() {
+    let map = WeakMapTable<KeyObject, ValueObject>()
+    let key = KeyObject()
+    weak var weakValue: ValueObject?
+
+    _ = {
+      let value = ValueObject()
+      map.setValue(value, forKey: key)
+      weakValue = value
+
+      map.removeAll()
+    }()
+
+    XCTAssertNil(map.value(forKey: key))
+    XCTAssertNil(weakValue)
+  }
 }
 
 private final class KeyObject {
