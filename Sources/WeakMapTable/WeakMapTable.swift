@@ -68,6 +68,13 @@ final public class WeakMapTable<Key, Value> where Key: AnyObject {
     }
   }
 
+  public func removeAll() {
+    self.lock.lock()
+    defer {
+        self.lock.unlock()
+    }
+    self.dictionary.removeAll()
+  }
 
   // MARK: Getting and Setting Values without Locking
 
